@@ -228,10 +228,10 @@ async function run() {
             });
         });
 
-        app.get('/payments', async (req, res) => {
-            const result = await paymentCollection.find().toArray();
-            res.send(result);
-        })
+        // app.get('/payments', async (req, res) => {
+        //     const result = await paymentCollection.find().toArray();
+        //     res.send(result);
+        // })
 
         app.get('/payments/:email', veriftToken, async (req, res) => {
             const query = {email: req.params.email};

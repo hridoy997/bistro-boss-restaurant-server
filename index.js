@@ -227,12 +227,7 @@ async function run() {
                 clientSecret: paymentIntent.client_secret,
             });
         });
-
-        // app.get('/payments', async (req, res) => {
-        //     const result = await paymentCollection.find().toArray();
-        //     res.send(result);
-        // })
-
+        
         app.get('/payments/:email', veriftToken, async (req, res) => {
             const query = {email: req.params.email};
             if (req.params.email !== req.decoded.email) {
